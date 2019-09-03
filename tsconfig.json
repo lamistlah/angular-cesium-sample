@@ -20,9 +20,10 @@
     ]
   },
   "include": [
-    "**/*.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
+    "node_modules"
   ],
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "untitled": {
+    "angular-cesium-sample": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/untitled",
+            "outputPath": "dist/angular-cesium-sample",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -22,12 +22,16 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              { "glob": "**/*", "input": "./node_modules/cesium/Build/Cesium", "output": "./assets/cesium" }
+              {
+                "glob": "**/*",
+                "input": "./node_modules/cesium/Build/Cesium",
+                "output": "./assets/cesium"
+              }
             ],
             "styles": [
+              "src/styles.css",
               "./node_modules/bootstrap/dist/css/bootstrap.css",
-              "./node_modules/cesium/Build/Cesium/Widgets/widgets.css",
-              "src/styles.css"
+              "./node_modules/cesium/Build/Cesium/Widgets/widgets.css"
             ],
             "scripts": [
               "./node_modules/cesium/Build/Cesium/Cesium.js"
@@ -68,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "untitled:build"
+            "browserTarget": "angular-cesium-sample:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "untitled:build:production"
+              "browserTarget": "angular-cesium-sample:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "untitled:build"
+            "browserTarget": "angular-cesium-sample:build"
           }
         },
         "test": {
@@ -118,18 +122,25 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "untitled:serve"
+            "devServerTarget": "angular-cesium-sample:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "untitled:serve:production"
+              "devServerTarget": "angular-cesium-sample:serve:production"
             }
+          }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "scripts": [
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "untitled",
+  "defaultProject": "angular-cesium-sample",
   "schematics": {
     "@schematics/angular:component": {
       "styleext": "scss"

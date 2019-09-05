@@ -133,8 +133,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "scripts": [
-            ]
+            "baseHref": "/angular-cesium-sample/"
           }
         }
       }

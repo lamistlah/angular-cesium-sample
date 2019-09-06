@@ -6,14 +6,16 @@
   },
   "extends": [
     "airbnb-base",
+    "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    // Uses the recommended rules from the @typescript-eslint/eslint-plugin
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:import/typescript"
   ],
   // Following will be specified by plugin:@typescript-eslint above
-  // "plugins": ["@typescript-eslint"],
+  "plugins": [
+    "@typescript-eslint"
+  ],
   "settings": {
     // Settings for eslint-plugin-import resolver
     "import/resolver": {
@@ -23,8 +25,8 @@
   },
   "parserOptions": {
     // Following parserOptions specified by airbnb-base
-    "ecmaVersion": 2018,
-    "sourceType": "module",
+    //    "ecmaVersion": 2018,
+    //    "sourceType": "module",
     // Options for @typescript-eslint/eslint-plugin
     "project": "./tsconfig.json"
   },
@@ -73,8 +75,8 @@
   "overrides": [
     {
       "files": [
-        "**/*.ts?(x)",
-        "**/*.spec.ts?(x)"
+        "**/*.ts",
+        "**/*.spec.ts"
       ],
       "rules": {
         // Turn off rules where tsc does a better job or has issues with TypeScript files.

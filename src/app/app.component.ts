@@ -11,7 +11,7 @@ import { ThemeService } from './service/theme.service';
 export class AppComponent implements OnInit {
   title = 'untitled';
 
-  private isDarkTheme: Observable<boolean>;
+  isDarkTheme: Observable<boolean>;
 
   constructor(
       private themeService: ThemeService,

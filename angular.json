@@ -29,7 +29,7 @@
               }
             ],
             "styles": [
-              "src/styles.css",
+              "src/styles.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.css",
               "./node_modules/cesium/Build/Cesium/Widgets/widgets.css"
             ],
@@ -98,7 +98,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [
               "./node_modules/cesium/Build/Cesium/Cesium.js"

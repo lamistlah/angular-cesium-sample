@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { dark, light, Theme } from '../component/theme/theme';
 
 @Injectable({
@@ -8,6 +9,10 @@ export class ThemeService {
   private active: Theme = light;
 
   private availableThemes: Theme[] = [light, dark];
+
+  private darkTheme = new Subject<boolean>();
+
+  private darkTheme$ = this.darkTheme.asObservable();
 
   getAvailableThemes(): Theme[] {
     return this.availableThemes;
@@ -38,5 +43,13 @@ export class ThemeService {
         this.active.properties[property],
       );
     });
+  }
+
+  getDarkThemeDynamic(): Observable<boolean> {
+    return this.darkTheme$;
+  }
+
+  setDarkThemeDynamic(isDarkTheme: boolean): void {
+    this.darkTheme.next(isDarkTheme);
   }
 }

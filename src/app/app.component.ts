@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { OverlayContainer } from '@angular/cdk/overlay';
 import { ThemeService } from './service/theme.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,11 +11,17 @@ import { ThemeService } from './service/theme.service';
 export class AppComponent implements OnInit {
   title = 'untitled';
 
-  constructor(private themeService: ThemeService) {
+  private isDarkTheme: Observable<boolean>;
+
+  constructor(
+      private themeService: ThemeService,
+      private overlayContainer: OverlayContainer,
+  ) {
   }
 
   ngOnInit(): void {
-    this.setTheme();
+    // this.setTheme();
+    this.isDarkTheme = this.themeService.getDarkThemeDynamic();
   }
 
   private setTheme(): void {
@@ -29,5 +38,17 @@ export class AppComponent implements OnInit {
     } else {
       this.themeService.setDarkTheme();
     }
+    this.setTheme();
+  }
+
+  toggleDarkTheme(checked: boolean): void {
+    this.themeService.setDarkThemeDynamic(checked);
+    const effectiveTheme = checked ? 'app-dark-theme' : 'app-default-theme';
+    const { classList } = this.overlayContainer.getContainerElement();
+    const toRemove = Array.from(classList).filter((item: string) => item.includes('-theme'));
+    if (toRemove.length) {
+      classList.remove(...toRemove);
+    }
+    classList.add(effectiveTheme);
   }
 }

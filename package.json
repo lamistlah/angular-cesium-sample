@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "eslint": "eslint --fix -c ts.eslintrc --ext=ts src/app -f html -o ./eslint/eslintResult.html"
+    "eslint": "eslint --fix -c ts.eslintrc --ext=ts src/app -f html -o ./eslint/eslintResult.html",
+    "build-deploy-gh-pages": "ng build --prod --base-href 'https://bobbysy.github.io/angular-cesium-sample/' && npx ngh --dir dist/angular-cesium-sample"
   },
   "lint-staged": {
     "src/**/*.{ts}": [

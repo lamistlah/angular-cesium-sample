@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { ThemeService } from './service/theme.service';
+import { MapComponent } from './component/map/map.component';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,8 @@ export class AppComponent implements OnInit {
   title = 'untitled';
 
   isDarkTheme: Observable<boolean>;
+
+  @ViewChild('mainMap', { static: false }) mainMap: MapComponent;
 
   constructor(
       private themeService: ThemeService,

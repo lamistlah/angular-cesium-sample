@@ -35,6 +35,12 @@
     "import/prefer-default-export": "off",
     // Restore `airbnb` rules overridden by `typescript-eslint/recommended` ruleset.
     //"@typescript-eslint/camelcase": ["error", { "properties": "never", "ignoreDestructuring": false }],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
     "@typescript-eslint/no-empty-function": [
       "error",
       {

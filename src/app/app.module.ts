@@ -8,10 +8,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import { SharedMaterialModule } from './shared/material-module';
 import { ThemeModule } from './component/theme/theme.module';
+import { MapComponent } from './component/map/map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MapComponent,
   ],
   imports: [
     FormsModule,

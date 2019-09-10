@@ -7,7 +7,8 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
-window.CESIUM_BASE_URL = '/assets/cesium/';
+// eslint-disable-next-line dot-notation
+window['CESIUM_BASE_URL'] = '/assets/cesium/';
 Cesium.buildModuleUrl.setBaseUrl('/assets/cesium/'); // If youre using Cesium version >= 1.42.0 add this line
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch((err) => console.error(err));

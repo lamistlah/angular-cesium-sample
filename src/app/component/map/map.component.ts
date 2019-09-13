@@ -31,6 +31,7 @@ export class MapComponent {
       }),
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     viewerConf.viewerModifier = (viewer: any): void => {
       viewer.screenSpaceEventHandler
         .removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);

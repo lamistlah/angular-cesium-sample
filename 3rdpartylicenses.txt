@@ -189,6 +189,9 @@ THE SOFTWARE.
 @angular/platform-browser
 MIT
 
+@angular/router
+MIT
+
 angular-cesium
 MIT
 The MIT License (MIT)

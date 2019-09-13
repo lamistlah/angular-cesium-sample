@@ -3,6 +3,7 @@
     "tslint-config-airbnb"
   ],
   "rules": {
+    "ter-arrow-parens": [true],
     "array-type": false,
     "arrow-parens": false,
     "deprecation": {

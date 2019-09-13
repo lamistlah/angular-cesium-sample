@@ -25,7 +25,10 @@ export class MapComponent {
       geocoder: true,
       navigationHelpButton: false,
       navigationInstructionsInitiallyVisible: false,
-      mapMode2D: Cesium.MapMode2D.ROTATE,
+      mapMode2D: Cesium.MapMode2D.INFINITE_SCROLL,
+      imageryProvider: Cesium.createOpenStreetMapImageryProvider({
+        url: 'https://a.tile.openstreetmap.org/',
+      }),
     };
 
     viewerConf.viewerModifier = (viewer: any): void => {

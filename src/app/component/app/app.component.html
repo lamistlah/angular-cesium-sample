@@ -28,17 +28,14 @@
       </mat-toolbar-row>
     </mat-toolbar>
 
-    <mat-sidenav-container>
-      <mat-sidenav #sidenav class="sidenav">
+    <mat-sidenav-container fxFlex>
+      <mat-sidenav #sidenav class="sidenav" fxLayout="column">
         <mat-nav-list>
           <a mat-list-item (click)="sidenav.toggle()">Close</a>
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content>
-        <div class="map-container">
-<!--          <router-outlet></router-outlet>-->
-          <app-map #mainMap></app-map>
-        </div>
+        <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>

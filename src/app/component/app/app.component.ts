@@ -1,11 +1,7 @@
-import {
-  AfterViewInit, Component, OnInit, ViewChild, ViewEncapsulation,
-} from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { OverlayContainer } from '@angular/cdk/overlay';
-import { DraggableToMapService, MapsManagerService } from 'angular-cesium';
 import { ThemeService } from '../../service/theme.service';
-import { MapComponent } from '../map/map.component';
 
 @Component({
   selector: 'app-root',
@@ -13,18 +9,14 @@ import { MapComponent } from '../map/map.component';
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
   title = 'angular-cesium-sample';
 
   isDarkTheme: Observable<boolean>;
 
-  @ViewChild('mainMap', { static: false }) mainMap: MapComponent;
-
   constructor(
-      private themeService: ThemeService,
-      private overlayContainer: OverlayContainer,
-      private mapsManagerService: MapsManagerService,
-      private draggableToMapService: DraggableToMapService,
+    private themeService: ThemeService,
+    private overlayContainer: OverlayContainer,
   ) {
   }
 
@@ -59,11 +51,5 @@ export class AppComponent implements OnInit, AfterViewInit {
       classList.remove(...toRemove);
     }
     classList.add(effectiveTheme);
-  }
-
-  ngAfterViewInit(): void {
-    // example for getting the viewer by Id outside of the ac-map hierarchy
-    this.mapsManagerService.getMap('main-map');
-    this.draggableToMapService.dragUpdates().subscribe((e) => console.log(e));
   }
 }

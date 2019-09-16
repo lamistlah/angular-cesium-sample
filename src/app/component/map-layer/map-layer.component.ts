@@ -9,6 +9,6 @@ import { MapLayerService } from '../../service/map-layer.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MapLayerComponent {
-  constructor(private mapLayerService: MapLayerService) {
+  constructor(public mapLayerService: MapLayerService) {
   }
 }

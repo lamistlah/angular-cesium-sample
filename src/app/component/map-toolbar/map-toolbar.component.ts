@@ -9,7 +9,7 @@ import { MapLayerService } from '../../service/map-layer.service';
 })
 export class MapToolbarComponent {
   constructor(private cameraService: CameraService,
-              private mapLayerService: MapLayerService) {
+              public mapLayerService: MapLayerService) {
   }
 
   goHome(): void {

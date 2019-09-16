@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { MapLayerData, mapLayerDataList } from './map-layer.data';
+import { MapLayerService } from '../../service/map-layer.service';
+
 
 @Component({
   selector: 'app-map-layer',
@@ -8,5 +9,6 @@ import { MapLayerData, mapLayerDataList } from './map-layer.data';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MapLayerComponent {
-  mapLayerDataList: MapLayerData[] = mapLayerDataList;
+  constructor(private mapLayerService: MapLayerService) {
+  }
 }

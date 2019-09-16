@@ -3,4 +3,7 @@
                      (onClick)="goHome()">
     <mat-icon>home</mat-icon>
   </ac-toolbar-button>
+  <div *ngFor="let mapLayerData of (mapLayerService.getMapLayerData() | async); let i = index;">
+    <mat-slide-toggle matTooltip="{{mapLayerData.id}}" [(ngModel)]="mapLayerData.show" (change)="toggleLayerVisibility()"></mat-slide-toggle>
+  </div>
 </ac-toolbar>

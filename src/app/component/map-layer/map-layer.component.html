@@ -1,0 +1,6 @@
+<div *ngFor="let mapLayerData of mapLayerDataList">
+  <ac-map-layer-provider
+    [provider]="mapLayerData.provider"
+    [options]="mapLayerData.options">
+  </ac-map-layer-provider>
+</div>

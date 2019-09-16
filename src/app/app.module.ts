@@ -12,12 +12,15 @@ import { MapComponent } from './component/map/map.component';
 import { AppComponent } from './component/app/app.component';
 import { routes } from './app.route';
 import { MapToolbarComponent } from './component/map-toolbar/map-toolbar.component';
+import { MapLayerComponent } from './component/map-layer/map-layer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     MapToolbarComponent,
+    MapLayerComponent,
+    MapLayerComponent,
   ],
   imports: [
     FormsModule,

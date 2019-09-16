@@ -2,7 +2,8 @@ import {
   AfterViewInit, Component, ViewChild,
 } from '@angular/core';
 import {
-  DraggableToMapService, MapsManagerService, SceneMode, ViewerConfiguration,
+  DraggableToMapService, MapsManagerService, SceneMode,
+  ViewerConfiguration, MapLayerProviderOptions,
 } from 'angular-cesium';
 
 @Component({
@@ -17,6 +18,8 @@ export class MapComponent implements AfterViewInit {
   Cesium = Cesium;
 
   @ViewChild('mainMap', { static: false }) mainMap: MapComponent;
+
+  MapLayerProviderOptions = MapLayerProviderOptions;
 
   constructor(private viewerConf: ViewerConfiguration,
               private mapsManagerService: MapsManagerService,
@@ -34,9 +37,6 @@ export class MapComponent implements AfterViewInit {
       navigationHelpButton: false,
       navigationInstructionsInitiallyVisible: false,
       mapMode2D: Cesium.MapMode2D.INFINITE_SCROLL,
-      imageryProvider: Cesium.createOpenStreetMapImageryProvider({
-        url: 'https://a.tile.openstreetmap.org/',
-      }),
     };
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

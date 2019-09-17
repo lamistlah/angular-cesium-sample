@@ -31,6 +31,10 @@
     <mat-sidenav-container fxFlex>
       <mat-sidenav #sidenav class="sidenav">
         <mat-nav-list>
+          <div *ngFor="let mapLayerData of (mapLayerService.getMapLayerData() | async); let i = index;">
+            <mat-slide-toggle mat-list-item matTooltip="{{mapLayerData.id}}" [(ngModel)]="mapLayerData.show"
+                              (change)="toggleLayerVisibility()">{{mapLayerData.id}}</mat-slide-toggle>
+          </div>
           <a mat-list-item (click)="sidenav.toggle()">Close</a>
         </mat-nav-list>
       </mat-sidenav>

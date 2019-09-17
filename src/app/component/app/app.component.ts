@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { ThemeService } from '../../service/theme.service';
+import { MapLayerService } from '../../service/map-layer.service';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ export class AppComponent implements OnInit {
   constructor(
     private themeService: ThemeService,
     private overlayContainer: OverlayContainer,
+    public mapLayerService: MapLayerService,
   ) {
   }
 
@@ -51,5 +53,9 @@ export class AppComponent implements OnInit {
       classList.remove(...toRemove);
     }
     classList.add(effectiveTheme);
+  }
+
+  toggleLayerVisibility(): void {
+    this.mapLayerService.updateMapLayerData();
   }
 }

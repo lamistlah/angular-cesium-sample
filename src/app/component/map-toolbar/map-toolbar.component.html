@@ -3,7 +3,29 @@
                      (onClick)="goHome()">
     <mat-icon>home</mat-icon>
   </ac-toolbar-button>
-  <div *ngFor="let mapLayerData of (mapLayerService.getMapLayerData() | async); let i = index;">
-    <mat-slide-toggle matTooltip="{{mapLayerData.id}}" [(ngModel)]="mapLayerData.show" (change)="toggleLayerVisibility()"></mat-slide-toggle>
-  </div>
+  <ac-toolbar-button matTooltip="Range And Bearing" matTooltipPosition="right"
+                     (onClick)="createRangeAndBearing()">
+    <mat-icon>format_shapes</mat-icon>
+  </ac-toolbar-button>
+  <ac-toolbar-button matTooltip="Draw Circle" matTooltipPosition="right"
+                     (onClick)="drawCircle()">
+    <mat-icon>format_shapes</mat-icon>
+  </ac-toolbar-button>
+  <ac-toolbar-button matTooltip="Draw Ellipse" matTooltipPosition="right"
+                     (onClick)="drawEllipse()">
+    <mat-icon>format_shapes</mat-icon>
+  </ac-toolbar-button>
+  <ac-toolbar-button matTooltip="Draw Polygon" matTooltipPosition="right"
+                     (onClick)="drawPolygon()">
+    <mat-icon>format_shapes</mat-icon>
+  </ac-toolbar-button>
+  <ac-toolbar-button matTooltip="Draw Polyline" matTooltipPosition="right"
+                     (onClick)="drawPolyline()">
+    <mat-icon>format_shapes</mat-icon>
+  </ac-toolbar-button>
+  <range-and-bearing #rangeAndBearing></range-and-bearing>
+  <circles-editor></circles-editor>
+  <ellipses-editor></ellipses-editor>
+  <polygons-editor></polygons-editor>
+  <polylines-editor></polylines-editor>
 </ac-toolbar>

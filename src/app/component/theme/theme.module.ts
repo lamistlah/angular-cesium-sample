@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { ThemeService } from '../../service/theme.service';
 
 
@@ -12,3 +12,5 @@ import { ThemeService } from '../../service/theme.service';
 })
 export class ThemeModule {
 }
+
+export default 'ThemeModule';

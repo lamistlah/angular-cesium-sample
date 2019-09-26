@@ -34,3 +34,5 @@ export const mapLayerDataList: MapLayerData[] = [
     show: true,
   },
 ];
+
+export default 'mapLayerDataList';

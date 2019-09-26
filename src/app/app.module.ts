@@ -1,17 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AngularCesiumModule, AngularCesiumWidgetsModule } from 'angular-cesium';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import {
+  AngularCesiumModule,
+  AngularCesiumWidgetsModule,
+} from 'angular-cesium';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { RouterModule } from '@angular/router';
 import { SharedMaterialModule } from './shared/material-module';
 import { ThemeModule } from './component/theme/theme.module';
-import { MapComponent } from './component/map/map.component';
 import { AppComponent } from './component/app/app.component';
-import { routes } from './app.route';
+import { MapComponent } from './component/map/map.component';
 import { MapToolbarComponent } from './component/map-toolbar/map-toolbar.component';
+import { routes } from './app.route';
 import { MapLayerComponent } from './component/map-layer/map-layer.component';
 
 @NgModule({
@@ -19,7 +21,6 @@ import { MapLayerComponent } from './component/map-layer/map-layer.component';
     AppComponent,
     MapComponent,
     MapToolbarComponent,
-    MapLayerComponent,
     MapLayerComponent,
   ],
   imports: [
@@ -42,5 +43,5 @@ import { MapLayerComponent } from './component/map-layer/map-layer.component';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}
+export default 'AppModule';

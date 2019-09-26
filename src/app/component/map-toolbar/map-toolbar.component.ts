@@ -1,3 +1,4 @@
+/* global Cesium */
 import { Component, ViewChild } from '@angular/core';
 import {
   CameraService,
@@ -13,19 +14,33 @@ import {
   selector: 'app-map-toolbar',
   templateUrl: './map-toolbar.component.html',
   styleUrls: ['./map-toolbar.component.scss'],
-  providers: [CirclesEditorService, EllipsesEditorService,
-    PolygonsEditorService, PolylinesEditorService],
+  providers: [
+    CirclesEditorService,
+    EllipsesEditorService,
+    PolygonsEditorService,
+    PolylinesEditorService,
+  ],
 })
 export class MapToolbarComponent {
   rnb: PolylineEditorObservable;
 
-  @ViewChild('rangeAndBearing', { static: false }) private rangeAndBearing: RangeAndBearingComponent;
+  Cesium = Cesium;
 
-  constructor(private cameraService: CameraService,
-              private circlesEditor: CirclesEditorService,
-              private ellipsesEditor: EllipsesEditorService,
-              private polygonsEditor: PolygonsEditorService,
-              private polylineEditor: PolylinesEditorService) {
+  @ViewChild('rangeAndBearing', { static: false })
+  private rangeAndBearing: RangeAndBearingComponent;
+
+  constructor(
+    private cameraService: CameraService,
+    private circlesEditor: CirclesEditorService,
+    private ellipsesEditor: EllipsesEditorService,
+    private polygonsEditor: PolygonsEditorService,
+    private polylineEditor: PolylinesEditorService,
+  ) {
+    this.cameraService = cameraService;
+    this.circlesEditor = circlesEditor;
+    this.ellipsesEditor = ellipsesEditor;
+    this.polygonsEditor = polygonsEditor;
+    this.polylineEditor = polylineEditor;
   }
 
   createRangeAndBearing(): void {
@@ -53,8 +68,14 @@ export class MapToolbarComponent {
   }
 
   goHome(): void {
-    this.cameraService.cameraFlyTo(
-      { destination: Cesium.Cartesian3.fromDegrees(-173.9642431, 26.064187, 200000) },
-    );
+    this.cameraService.cameraFlyTo({
+      destination: this.Cesium.Cartesian3.fromDegrees(
+        -173.9642431,
+        26.064187,
+        200000,
+      ),
+    });
   }
 }
+
+export default 'MapToolbarComponent';

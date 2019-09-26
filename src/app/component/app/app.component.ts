@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { OverlayContainer } from '@angular/cdk/overlay';
-import { ThemeService } from '../../service/theme.service';
 import { MapLayerService } from '../../service/map-layer.service';
+import { ThemeService } from '../../service/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +20,9 @@ export class AppComponent implements OnInit {
     private overlayContainer: OverlayContainer,
     public mapLayerService: MapLayerService,
   ) {
+    this.themeService = themeService;
+    this.overlayContainer = overlayContainer;
+    this.mapLayerService = mapLayerService;
   }
 
   ngOnInit(): void {
@@ -59,3 +62,5 @@ export class AppComponent implements OnInit {
     this.mapLayerService.updateMapLayerData();
   }
 }
+
+export default 'AppComponent';

@@ -145,3 +145,5 @@ import 'hammerjs';
 })
 export class SharedMaterialModule {
 }
+
+export default 'SharedMaterialModule';

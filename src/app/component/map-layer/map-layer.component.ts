@@ -10,5 +10,8 @@ import { MapLayerService } from '../../service/map-layer.service';
 })
 export class MapLayerComponent {
   constructor(public mapLayerService: MapLayerService) {
+    this.mapLayerService = mapLayerService;
   }
 }
+
+export default 'MapLayerComponent';

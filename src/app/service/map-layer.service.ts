@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { MapLayerData, mapLayerDataList } from '../component/map-layer/map-layer.data';
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -19,3 +20,5 @@ export class MapLayerService {
     this.mapLayerDataList$.next(mapLayerDataList);
   }
 }
+
+export default 'MapLayerService';

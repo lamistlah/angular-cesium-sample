@@ -53,3 +53,5 @@ export class ThemeService {
     this.darkTheme.next(isDarkTheme);
   }
 }
+
+export default 'ThemeService';

@@ -1,10 +1,12 @@
+/* global Cesium */
 import {
-  AfterViewInit, Component, ViewChild,
-} from '@angular/core';
-import {
-  DraggableToMapService, MapsManagerService, SceneMode,
-  ViewerConfiguration, MapLayerProviderOptions,
+  DraggableToMapService,
+  MapLayerProviderOptions,
+  MapsManagerService,
+  SceneMode,
+  ViewerConfiguration,
 } from 'angular-cesium';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-map',
@@ -21,10 +23,12 @@ export class MapComponent implements AfterViewInit {
 
   MapLayerProviderOptions = MapLayerProviderOptions;
 
-  constructor(private viewerConf: ViewerConfiguration,
-              private mapsManagerService: MapsManagerService,
-              private draggableToMapService: DraggableToMapService) {
-    viewerConf.viewerOptions = {
+  constructor(
+    private viewerConf: ViewerConfiguration,
+    private mapsManagerService: MapsManagerService,
+    private draggableToMapService: DraggableToMapService,
+  ) {
+    this.viewerConf.viewerOptions = {
       selectionIndicator: false,
       timeline: false,
       infoBox: false,
@@ -36,13 +40,14 @@ export class MapComponent implements AfterViewInit {
       geocoder: true,
       navigationHelpButton: false,
       navigationInstructionsInitiallyVisible: false,
-      mapMode2D: Cesium.MapMode2D.INFINITE_SCROLL,
+      mapMode2D: this.Cesium.MapMode2D.INFINITE_SCROLL,
     };
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    viewerConf.viewerModifier = (viewer: any): void => {
-      viewer.screenSpaceEventHandler
-        .removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
+    this.viewerConf.viewerModifier = (viewer: any): void => {
+      viewer.screenSpaceEventHandler.removeInputAction(
+        this.Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK,
+      );
     };
   }
 
@@ -52,3 +57,5 @@ export class MapComponent implements AfterViewInit {
     this.draggableToMapService.dragUpdates().subscribe((e) => console.log(e));
   }
 }
+
+export default 'MapComponent';

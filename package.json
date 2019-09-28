@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "eslint --fix --ext=ts src/app -f html -o ./eslint/eslintResult.html",
     "e2e": "ng e2e",
     "eslint": "eslint --fix -c ts.eslintrc --ext=ts src/app -f html -o ./eslint/eslintResult.html",
     "build-deploy-gh-pages": "ng build --prod --base-href 'https://bobbysy.github.io/angular-cesium-sample/' && npx ngh --dir dist/angular-cesium-sample"
@@ -65,8 +65,10 @@
     "codelyzer": "^5.1.2",
     "eslint": "^6.4.0",
     "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.3.0",
     "eslint-import-resolver-typescript": "^1.1.1",
     "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
     "husky": "^3.0.5",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -79,8 +81,6 @@
     "prettier": "1.18.2",
     "protractor": "~5.4.0",
     "ts-node": "~8.4.1",
-    "tslint": "^5.20.0",
-    "tslint-config-airbnb": "^5.11.2",
     "typescript": "~3.5.3"
   },
   "author": "sy",

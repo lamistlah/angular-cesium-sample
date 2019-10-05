@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { dark, light, Theme } from '../component/theme/theme';
+import { Injectable } from "@angular/core";
+import { Observable, Subject } from "rxjs";
+import { dark, light, Theme } from "../component/theme/theme";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root"
 })
 export class ThemeService {
   private active: Theme = light;
@@ -40,7 +40,7 @@ export class ThemeService {
     Object.keys(this.active.properties).forEach((property) => {
       document.documentElement.style.setProperty(
         property,
-        this.active.properties[property],
+        this.active.properties[property]
       );
     });
   }
@@ -54,4 +54,4 @@ export class ThemeService {
   }
 }
 
-export default 'ThemeService';
+export default "ThemeService";

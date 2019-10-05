@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { MapToolbarComponent } from './map-toolbar.component';
+import { MapToolbarComponent } from "./map-toolbar.component";
 
-describe('MapToolbarComponent', () => {
+describe("MapToolbarComponent", () => {
   let component: MapToolbarComponent;
   let fixture: ComponentFixture<MapToolbarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MapToolbarComponent],
-    })
-      .compileComponents();
+      declarations: [MapToolbarComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('MapToolbarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

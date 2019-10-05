@@ -1,5 +1,5 @@
 /* global Cesium */
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild } from "@angular/core";
 import {
   CameraService,
   CirclesEditorService,
@@ -7,26 +7,26 @@ import {
   PolygonsEditorService,
   PolylineEditorObservable,
   PolylinesEditorService,
-  RangeAndBearingComponent,
-} from 'angular-cesium';
+  RangeAndBearingComponent
+} from "angular-cesium";
 
 @Component({
-  selector: 'app-map-toolbar',
-  templateUrl: './map-toolbar.component.html',
-  styleUrls: ['./map-toolbar.component.scss'],
+  selector: "app-map-toolbar",
+  templateUrl: "./map-toolbar.component.html",
+  styleUrls: ["./map-toolbar.component.scss"],
   providers: [
     CirclesEditorService,
     EllipsesEditorService,
     PolygonsEditorService,
-    PolylinesEditorService,
-  ],
+    PolylinesEditorService
+  ]
 })
 export class MapToolbarComponent {
   rnb: PolylineEditorObservable;
 
   Cesium = Cesium;
 
-  @ViewChild('rangeAndBearing', { static: false })
+  @ViewChild("rangeAndBearing", { static: false })
   private rangeAndBearing: RangeAndBearingComponent;
 
   constructor(
@@ -34,7 +34,7 @@ export class MapToolbarComponent {
     private circlesEditor: CirclesEditorService,
     private ellipsesEditor: EllipsesEditorService,
     private polygonsEditor: PolygonsEditorService,
-    private polylineEditor: PolylinesEditorService,
+    private polylineEditor: PolylinesEditorService
   ) {
     this.cameraService = cameraService;
     this.circlesEditor = circlesEditor;
@@ -72,10 +72,10 @@ export class MapToolbarComponent {
       destination: this.Cesium.Cartesian3.fromDegrees(
         -173.9642431,
         26.064187,
-        200000,
-      ),
+        200000
+      )
     });
   }
 }
 
-export default 'MapToolbarComponent';
+export default "MapToolbarComponent";

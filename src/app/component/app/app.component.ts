@@ -1,24 +1,24 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Observable } from 'rxjs';
-import { OverlayContainer } from '@angular/cdk/overlay';
-import { MapLayerService } from '../../service/map-layer.service';
-import { ThemeService } from '../../service/theme.service';
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Observable } from "rxjs";
+import { OverlayContainer } from "@angular/cdk/overlay";
+import { MapLayerService } from "../../service/map-layer.service";
+import { ThemeService } from "../../service/theme.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-  title = 'angular-cesium-sample';
+  title = "angular-cesium-sample";
 
   isDarkTheme: Observable<boolean>;
 
   constructor(
     private themeService: ThemeService,
     private overlayContainer: OverlayContainer,
-    public mapLayerService: MapLayerService,
+    public mapLayerService: MapLayerService
   ) {
     this.themeService = themeService;
     this.overlayContainer = overlayContainer;
@@ -49,9 +49,11 @@ export class AppComponent implements OnInit {
 
   toggleDarkTheme(checked: boolean): void {
     this.themeService.setDarkThemeDynamic(checked);
-    const effectiveTheme = checked ? 'app-dark-theme' : 'app-default-theme';
+    const effectiveTheme = checked ? "app-dark-theme" : "app-default-theme";
     const { classList } = this.overlayContainer.getContainerElement();
-    const toRemove = Array.from(classList).filter((item: string) => item.includes('-theme'));
+    const toRemove = Array.from(classList).filter((item: string) =>
+      item.includes("-theme")
+    );
     if (toRemove.length) {
       classList.remove(...toRemove);
     }
@@ -63,4 +65,4 @@ export class AppComponent implements OnInit {
   }
 }
 
-export default 'AppComponent';
+export default "AppComponent";

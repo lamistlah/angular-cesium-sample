@@ -1,17 +1,17 @@
-import { Routes } from '@angular/router';
-import { MapComponent } from './component/map/map.component';
+import { Routes } from "@angular/router";
+import { MapComponent } from "./component/map/map.component";
 
 export const routes: Routes = [
   {
-    path: '',
-    redirectTo: '/map',
-    pathMatch: 'full',
+    path: "",
+    redirectTo: "/map",
+    pathMatch: "full"
   },
   {
-    path: 'map',
-    component: MapComponent,
+    path: "map",
+    component: MapComponent
     // canActivate: [AuthGuard]
-  },
+  }
 ];
 
-export default 'routes';
+export default "routes";

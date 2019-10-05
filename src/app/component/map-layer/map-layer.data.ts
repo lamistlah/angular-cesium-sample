@@ -1,38 +1,41 @@
-import { MapLayerProviderOptions } from 'angular-cesium';
+import { MapLayerProviderOptions } from "angular-cesium";
 
 export interface MapLayerData {
   id: string;
   provider: MapLayerProviderOptions;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   options: any;
   show: boolean;
 }
 
 export const mapLayerDataList: MapLayerData[] = [
   {
-    id: 'ArcGisMapServer',
+    id: "ArcGisMapServer",
     provider: MapLayerProviderOptions.ArcGisMapServer,
     options: {
-      url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer',
+      url:
+        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"
     },
-    show: true,
+    show: true
   },
   {
-    id: 'OpenStreetMap',
+    id: "OpenStreetMap",
     provider: MapLayerProviderOptions.OpenStreetMap,
     options: {
-      url: 'https://a.tile.openstreetmap.org/',
+      url: "https://a.tile.openstreetmap.org/"
     },
-    show: true,
+    show: true
   },
   {
-    id: 'UrlTemplateImagery',
+    id: "UrlTemplateImagery",
     provider: MapLayerProviderOptions.UrlTemplateImagery,
     options: {
-      url: 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-      credit: 'Map tiles by CartoDB, under CC BY 3.0. Data by OpenStreetMap, under ODbL.',
+      url: "http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+      credit:
+        "Map tiles by CartoDB, under CC BY 3.0. Data by OpenStreetMap, under ODbL."
     },
-    show: true,
-  },
+    show: true
+  }
 ];
 
-export default 'mapLayerDataList';
+export default "mapLayerDataList";

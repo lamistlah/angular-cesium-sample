@@ -1,26 +1,44 @@
 <ac-toolbar [allowDrag]="false">
-  <ac-toolbar-button matTooltip="Home" matTooltipPosition="right"
-                     (onClick)="goHome()">
+  <ac-toolbar-button
+    matTooltip="Home"
+    matTooltipPosition="right"
+    (onClick)="goHome()"
+  >
     <mat-icon>home</mat-icon>
   </ac-toolbar-button>
-  <ac-toolbar-button matTooltip="Range And Bearing" matTooltipPosition="right"
-                     (onClick)="createRangeAndBearing()">
+  <ac-toolbar-button
+    matTooltip="Range And Bearing"
+    matTooltipPosition="right"
+    (onClick)="createRangeAndBearing()"
+  >
     <mat-icon>format_shapes</mat-icon>
   </ac-toolbar-button>
-  <ac-toolbar-button matTooltip="Draw Circle" matTooltipPosition="right"
-                     (onClick)="drawCircle()">
+  <ac-toolbar-button
+    matTooltip="Draw Circle"
+    matTooltipPosition="right"
+    (onClick)="drawCircle()"
+  >
     <mat-icon>format_shapes</mat-icon>
   </ac-toolbar-button>
-  <ac-toolbar-button matTooltip="Draw Ellipse" matTooltipPosition="right"
-                     (onClick)="drawEllipse()">
+  <ac-toolbar-button
+    matTooltip="Draw Ellipse"
+    matTooltipPosition="right"
+    (onClick)="drawEllipse()"
+  >
     <mat-icon>format_shapes</mat-icon>
   </ac-toolbar-button>
-  <ac-toolbar-button matTooltip="Draw Polygon" matTooltipPosition="right"
-                     (onClick)="drawPolygon()">
+  <ac-toolbar-button
+    matTooltip="Draw Polygon"
+    matTooltipPosition="right"
+    (onClick)="drawPolygon()"
+  >
     <mat-icon>format_shapes</mat-icon>
   </ac-toolbar-button>
-  <ac-toolbar-button matTooltip="Draw Polyline" matTooltipPosition="right"
-                     (onClick)="drawPolyline()">
+  <ac-toolbar-button
+    matTooltip="Draw Polyline"
+    matTooltipPosition="right"
+    (onClick)="drawPolyline()"
+  >
     <mat-icon>format_shapes</mat-icon>
   </ac-toolbar-button>
   <range-and-bearing #rangeAndBearing></range-and-bearing>

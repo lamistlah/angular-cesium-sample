@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { MapLayerComponent } from './map-layer.component';
+import { MapLayerComponent } from "./map-layer.component";
 
-describe('MapLayerComponent', () => {
+describe("MapLayerComponent", () => {
   let component: MapLayerComponent;
   let fixture: ComponentFixture<MapLayerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MapLayerComponent],
-    })
-      .compileComponents();
+      declarations: [MapLayerComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('MapLayerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

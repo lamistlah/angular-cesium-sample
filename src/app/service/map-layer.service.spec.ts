@@ -1,11 +1,11 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
-import { MapLayerService } from './map-layer.service';
+import { MapLayerService } from "./map-layer.service";
 
-describe('MapLayerService', () => {
+describe("MapLayerService", () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
-  it('should be created', () => {
+  it("should be created", () => {
     const service: MapLayerService = TestBed.get(MapLayerService);
     expect(service).toBeTruthy();
   });

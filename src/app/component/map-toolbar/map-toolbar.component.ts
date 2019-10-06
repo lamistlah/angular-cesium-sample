@@ -3,6 +3,7 @@ import { Component, ViewChild } from "@angular/core";
 import {
   CameraService,
   CirclesEditorService,
+  EditorObservable,
   EllipsesEditorService,
   PolygonsEditorService,
   PolylineEditorObservable,
@@ -26,6 +27,8 @@ export class MapToolbarComponent {
 
   Cesium = Cesium;
 
+  editing$: EditorObservable<any>;
+
   @ViewChild("rangeAndBearing", { static: false })
   private rangeAndBearing: RangeAndBearingComponent;
 
@@ -46,32 +49,48 @@ export class MapToolbarComponent {
   createRangeAndBearing(): void {
     if (this.rnb) {
       this.rnb.dispose();
+      this.rnb = undefined;
     }
 
     this.rnb = this.rangeAndBearing.create();
+    this.startEdit(this.rnb);
   }
 
   drawCircle(): void {
-    this.circlesEditor.create();
+    this.startEdit(this.circlesEditor.create());
   }
 
   drawEllipse(): void {
-    this.ellipsesEditor.create();
+    this.startEdit(this.ellipsesEditor.create());
   }
 
   drawPolygon(): void {
-    this.polygonsEditor.create();
+    this.startEdit(this.polygonsEditor.create());
   }
 
   drawPolyline(): void {
-    this.polylineEditor.create();
+    this.startEdit(this.polylineEditor.create());
+  }
+
+  startEdit(editor: EditorObservable<any>): void {
+    if (this.editing$) {
+      this.stopEdit();
+    }
+    this.editing$ = editor;
+  }
+
+  stopEdit(): void {
+    if (this.editing$) {
+      this.editing$.dispose();
+      this.editing$ = undefined;
+    }
   }
 
   goHome(): void {
     this.cameraService.cameraFlyTo({
       destination: this.Cesium.Cartesian3.fromDegrees(
-        -173.9642431,
-        26.064187,
+        103.851959,
+        1.29027,
         200000
       )
     });

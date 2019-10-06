@@ -40,6 +40,7 @@ export class MapComponent implements AfterViewInit {
       geocoder: true,
       navigationHelpButton: false,
       navigationInstructionsInitiallyVisible: false,
+      sceneMode: SceneMode.SCENE2D,
       mapMode2D: this.Cesium.MapMode2D.INFINITE_SCROLL,
       mapProjection: new Cesium.WebMercatorProjection()
     };
@@ -53,8 +54,6 @@ export class MapComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // example for getting the viewer by Id outside of the ac-map hierarchy
-    this.mapsManagerService.getMap("main-map");
     this.draggableToMapService.dragUpdates().subscribe((e) => console.log(e));
   }
 }

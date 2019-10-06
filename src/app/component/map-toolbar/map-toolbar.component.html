@@ -1,46 +1,58 @@
 <ac-toolbar [allowDrag]="false">
-  <ac-toolbar-button
-    matTooltip="Home"
-    matTooltipPosition="right"
-    (onClick)="goHome()"
-  >
-    <mat-icon>home</mat-icon>
-  </ac-toolbar-button>
-  <ac-toolbar-button
-    matTooltip="Range And Bearing"
-    matTooltipPosition="right"
-    (onClick)="createRangeAndBearing()"
-  >
-    <mat-icon>format_shapes</mat-icon>
-  </ac-toolbar-button>
-  <ac-toolbar-button
-    matTooltip="Draw Circle"
-    matTooltipPosition="right"
-    (onClick)="drawCircle()"
-  >
-    <mat-icon>format_shapes</mat-icon>
-  </ac-toolbar-button>
-  <ac-toolbar-button
-    matTooltip="Draw Ellipse"
-    matTooltipPosition="right"
-    (onClick)="drawEllipse()"
-  >
-    <mat-icon>format_shapes</mat-icon>
-  </ac-toolbar-button>
-  <ac-toolbar-button
-    matTooltip="Draw Polygon"
-    matTooltipPosition="right"
-    (onClick)="drawPolygon()"
-  >
-    <mat-icon>format_shapes</mat-icon>
-  </ac-toolbar-button>
-  <ac-toolbar-button
-    matTooltip="Draw Polyline"
-    matTooltipPosition="right"
-    (onClick)="drawPolyline()"
-  >
-    <mat-icon>format_shapes</mat-icon>
-  </ac-toolbar-button>
+  <mat-menu #mapMenu="matMenu">
+    <button
+      mat-menu-item
+      matTooltip="Home"
+      matTooltipPosition="right"
+      (click)="goHome()"
+    >
+      <mat-icon>home</mat-icon>
+      Home
+    </button>
+    <button
+      mat-menu-item
+      matTooltip="Range And Bearing"
+      matTooltipPosition="right"
+      (click)="createRangeAndBearing()"
+    >
+      Range And Bearing
+    </button>
+    <button
+      mat-menu-item
+      matTooltip="Draw Circle"
+      matTooltipPosition="right"
+      (click)="drawCircle()"
+    >
+      Draw Circle
+    </button>
+    <button
+      mat-menu-item
+      matTooltip="Draw Ellipse"
+      matTooltipPosition="right"
+      (click)="drawEllipse()"
+    >
+      Draw Ellipse
+    </button>
+    <button
+      mat-menu-item
+      matTooltip="Draw Polygon"
+      matTooltipPosition="right"
+      (click)="drawPolygon()"
+    >
+      Draw Polygon
+    </button>
+    <button
+      mat-menu-item
+      matTooltip="Draw Polyline"
+      matTooltipPosition="right"
+      (click)="drawPolyline()"
+    >
+      Draw Polyline
+    </button>
+  </mat-menu>
+  <button mat-mini-fab [matMenuTriggerFor]="mapMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
   <range-and-bearing #rangeAndBearing></range-and-bearing>
   <circles-editor></circles-editor>
   <ellipses-editor></ellipses-editor>

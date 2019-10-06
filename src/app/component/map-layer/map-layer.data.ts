@@ -32,7 +32,8 @@ export const mapLayerDataList: MapLayerData[] = [
     options: {
       url: "http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
       credit:
-        "Map tiles by CartoDB, under CC BY 3.0. Data by OpenStreetMap, under ODbL."
+        "Map tiles by CartoDB, under CC BY 3.0. Data by OpenStreetMap, under ODbL.</br>" +
+        `[Contains information from Weather Forecast accessed on ${new Date()} from <a href='https://www.nea.gov.sg/'>National Environment Agency</a> which is made available under the terms of the <a href='https://data.gov.sg/open-data-licence'>Singapore Open Data Licence version 1.0</a>]`
     },
     show: true
   }

@@ -1,0 +1,26 @@
+<ac-layer
+  acFor="let weather of weather$"
+  [show]="true"
+  [context]="this"
+  [store]="true"
+>
+  <ac-billboard-desc
+    props="{
+    scale: 1,
+    image: weather.image,
+    name: weather.name,
+    position: weather.position,
+  }"
+  >
+  </ac-billboard-desc>
+
+  <ac-label-primitive-desc props="{
+        position: weather.position,
+        pixelOffset : pixelOffset([-15,20]) ,
+        text: weather.forecast,
+        font: '30px sans-serif',
+        scale: 0.5,
+        fillColor: getTextColor()
+    }">
+  </ac-label-primitive-desc>
+</ac-layer>

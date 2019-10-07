@@ -14,10 +14,11 @@
     "plugin:import/typescript",
     "prettier",
     "plugin:prettier/recommended",
-    "prettier/@typescript-eslint"
+    "prettier/@typescript-eslint",
+    "plugin:sonarjs/recommended"
   ],
   // Following will be specified by plugin:@typescript-eslint above
-  "plugins": ["prettier", "@typescript-eslint"],
+  "plugins": ["prettier", "@typescript-eslint", "sonarjs"],
   "settings": {
     // Settings for eslint-plugin-import resolver
     "import/resolver": {

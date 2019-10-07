@@ -42,9 +42,12 @@ export class MapComponent implements AfterViewInit {
       navigationInstructionsInitiallyVisible: false,
       sceneMode: SceneMode.SCENE2D,
       mapMode2D: this.Cesium.MapMode2D.INFINITE_SCROLL,
-      mapProjection: new Cesium.WebMercatorProjection()
+      mapProjection: new Cesium.WebMercatorProjection(),
+      imageryProvider: Cesium.createTileMapServiceImageryProvider({
+        url: Cesium.buildModuleUrl("Assets/Textures/NaturalEarthII"),
+        credit: `Contains information from Weather Forecast accessed on ${new Date()} from <a href='https://www.nea.gov.sg/'>National Environment Agency</a> which is made available under the terms of the <a href='https://data.gov.sg/open-data-licence'>Singapore Open Data Licence version 1.0</a>`
+      })
     };
-
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     this.viewerConf.viewerModifier = (viewer: any): void => {
       viewer.screenSpaceEventHandler.removeInputAction(
@@ -54,6 +57,14 @@ export class MapComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    const map = this.mapsManagerService.getMap("main-map");
+    map.getCameraService().cameraFlyTo({
+      destination: this.Cesium.Cartesian3.fromDegrees(
+        103.851959,
+        1.29027,
+        200000
+      )
+    });
     this.draggableToMapService.dragUpdates().subscribe((e) => console.log(e));
   }
 }

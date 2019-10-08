@@ -4,7 +4,7 @@
   [context]="this"
   [store]="true"
 >
-  <ac-billboard-desc
+  <ac-billboard-primitive-desc
     props="{
     scale: 1,
     image: weather.image,
@@ -12,15 +12,17 @@
     position: weather.position,
   }"
   >
-  </ac-billboard-desc>
+  </ac-billboard-primitive-desc >
 
-  <ac-label-primitive-desc props="{
+  <ac-label-primitive-desc
+    props="{
         position: weather.position,
         pixelOffset : pixelOffset([-15,20]) ,
         text: weather.forecast,
         font: '30px sans-serif',
         scale: 0.5,
         fillColor: getTextColor()
-    }">
+    }"
+  >
   </ac-label-primitive-desc>
 </ac-layer>

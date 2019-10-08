@@ -53,7 +53,6 @@ export class MapToolbarComponent {
     }
 
     this.rnb = this.rangeAndBearing.create();
-    this.startEdit(this.rnb);
   }
 
   drawCircle(): void {

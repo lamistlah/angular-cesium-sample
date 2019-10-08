@@ -63,7 +63,8 @@ export class MapComponent implements AfterViewInit {
         103.851959,
         1.29027,
         200000
-      )
+      ),
+      duration: 0
     });
     this.draggableToMapService.dragUpdates().subscribe((e) => console.log(e));
   }

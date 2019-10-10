@@ -56,7 +56,7 @@ export class WeatherDataServiceProvider {
         this.mapDataToAcNotification(observer, dataAPIURL, term);
         setInterval(() => {
           this.mapDataToAcNotification(observer, dataAPIURL, term);
-        }, 7.2e6);
+        }, 1.8e6);
       })
     );
     this.weatherData$.connect();

@@ -17,6 +17,7 @@ import { MapToolbarComponent } from "./component/map-toolbar/map-toolbar.compone
 import { routes } from "./app.route";
 import { MapLayerComponent } from "./component/map-layer/map-layer.component";
 import { WeatherDataLayerComponent } from "./component/weather-data-layer/weather-data-layer.component";
+import { WeatherDialogComponent } from "./component/weather-dialog/weather-dialog.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { WeatherDataLayerComponent } from "./component/weather-data-layer/weathe
     MapComponent,
     MapToolbarComponent,
     MapLayerComponent,
-    WeatherDataLayerComponent
+    WeatherDataLayerComponent,
+    WeatherDialogComponent
   ],
   imports: [
     FormsModule,

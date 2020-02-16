@@ -43,7 +43,7 @@ export class MapComponent implements AfterViewInit {
       sceneMode: SceneMode.SCENE2D,
       mapMode2D: this.Cesium.MapMode2D.INFINITE_SCROLL,
       mapProjection: new Cesium.WebMercatorProjection(),
-      imageryProvider: Cesium.createTileMapServiceImageryProvider({
+      imageryProvider: new Cesium.TileMapServiceImageryProvider({
         url: Cesium.buildModuleUrl("Assets/Textures/NaturalEarthII"),
         credit: `Contains information from Weather Forecast accessed on ${new Date()} from <a href='https://www.nea.gov.sg/'>National Environment Agency</a> which is made available under the terms of the <a href='https://data.gov.sg/open-data-licence'>Singapore Open Data Licence version 1.0</a>`
       })

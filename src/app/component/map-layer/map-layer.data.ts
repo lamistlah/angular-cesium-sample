@@ -18,14 +18,14 @@ export const mapLayerDataList: MapLayerData[] = [
     },
     show: true
   },
-  {
-    id: "OpenStreetMap",
-    provider: MapLayerProviderOptions.OpenStreetMap,
-    options: {
-      url: "https://a.tile.openstreetmap.org/"
-    },
-    show: true
-  },
+  // {
+  //   id: "OpenStreetMap",
+  //   provider: MapLayerProviderOptions.OpenStreetMap,
+  //   options: {
+  //     url: "https://a.tile.openstreetmap.org/"
+  //   },
+  //   show: true
+  // },
   {
     id: "UrlTemplateImagery",
     provider: MapLayerProviderOptions.UrlTemplateImagery,
